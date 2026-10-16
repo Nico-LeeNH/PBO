@@ -1,16 +1,13 @@
 package Jobsheet7.studikasus;
 
 public class PegawaiRestoran {
-    // FINAL ATTRIBUTE
     public final String NAMA_RESTORAN = "Resto Laut Nusantara";
-    // FINAL ATTRIBUTE #2: jam kerja standar per bulan, sama untuk semua pegawai,
-    // tidak boleh diubah
     public final double JAM_KERJA_STANDAR = 160;
 
     private String nama;
     private String id;
     private double gaji;
-    private double jamKerjaAktual; // jam kerja aktual pegawai per bulan, dipakai untuk hitung performa
+    private double jamKerja; // jam kerja pegawai per bulan
 
     public PegawaiRestoran() {
         System.out.println("Objek PegawaiRestoran dibuat");
@@ -48,21 +45,17 @@ public class PegawaiRestoran {
     }
 
     public double getJamKerjaAktual() {
-        return jamKerjaAktual;
+        return jamKerja;
     }
 
     public void setJamKerjaAktual(double jamKerjaAktual) {
-        this.jamKerjaAktual = jamKerjaAktual;
+        this.jamKerja = jamKerjaAktual;
     }
 
-    // performa dihitung dari rasio jam kerja aktual terhadap jam kerja standar
-    // contoh: jamKerjaAktual 176 jam / JAM_KERJA_STANDAR 160 jam = performa 1.1
-    // (melebihi standar)
     public double hitungPerforma() {
-        return jamKerjaAktual / JAM_KERJA_STANDAR;
+        return jamKerja / JAM_KERJA_STANDAR;
     }
 
-    // FINAL METHOD: tidak boleh di-override di class Koki/Pelayan
     public final void lihatPeraturanKerja() {
         System.out.println("Peraturan " + NAMA_RESTORAN + ": datang tepat waktu, jaga kebersihan, utamakan pelanggan.");
     }
@@ -75,7 +68,6 @@ public class PegawaiRestoran {
         return gaji * 0.05;
     }
 
-    // OVERLOADING: hitungBonus() dengan parameter performa
     public double hitungBonus(double performa) {
         return hitungBonus() * performa;
     }

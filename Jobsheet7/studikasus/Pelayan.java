@@ -21,14 +21,12 @@ public class Pelayan extends PegawaiRestoran {
         this.jumlahMejaDitangani = jumlahMejaDitangani;
     }
 
-    // OVERRIDING #1: tugas pelayan beda dari tugas umum pegawai
     @Override
     public void tampilkanTugas() {
         System.out.println(getNama() + " (Pelayan): melayani " + jumlahMejaDitangani
                 + " meja dan mengantar pesanan di " + NAMA_RESTORAN + ".");
     }
 
-    // OVERRIDING #2: rumus bonus pelayan beda dengan bonus dasar (dari parent)
     @Override
     public double hitungBonus() {
         double bonusDasar = super.hitungBonus();

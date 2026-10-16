@@ -21,14 +21,12 @@ public class Koki extends PegawaiRestoran {
         this.spesialisasiMasakan = spesialisasiMasakan;
     }
 
-    // OVERRIDING #1: tugas koki beda dari tugas umum pegawai
     @Override
     public void tampilkanTugas() {
         System.out.println(getNama() + " (Koki, spesialisasi " + spesialisasiMasakan
                 + "): memasak pesanan sesuai menu di dapur " + NAMA_RESTORAN + ".");
     }
 
-    // OVERRIDING #2: rumus bonus koki beda dengan bonus dasar (dari parent)
     @Override
     public double hitungBonus() {
         double bonusDasar = super.hitungBonus();

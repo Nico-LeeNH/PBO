@@ -10,7 +10,7 @@ final class ResepRahasia {
     }
 
     public void tampilkanResep() {
-        System.out.println("Resep '" + namaResep + "' hanya boleh diakses Head Chef. Bahan rahasia: " + bahanRahasia
+        System.out.println("Resep '" + namaResep + "' hanya boleh diakses Kepala Chef. Bahan rahasia: " + bahanRahasia
                 + ". Dijaga ketat.");
     }
 }
